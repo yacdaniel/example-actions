@@ -35,9 +35,9 @@ jobs:
         id: start
         run: |
           SCAN_ID=$(nexploit-cli scan:run                                                 \
-            --test csrf dom_xss header_security secret_tokens                             \
+            --test                            \
             --name "🥤 Juice-Shop for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
-            --crawler http://juiceshop.local:3000                                         \
+            --crawler https://brokencrystals.com                                       \
             --repeater ${{ secrets.REPEATER }}                                            \
             --token ${{ secrets.NEXPLOIT_TOKEN }})
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
